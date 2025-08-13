@@ -6,8 +6,8 @@ import { api } from "@workspace/backend/_generated/api"
 
 
 export default function Page() {
-  const users = useQuery(api.user.getMany)
-  const addUser = useMutation(api.user.add)
+  const users = useQuery(api.users.getMany)
+  const addUser = useMutation(api.users.add)
 
 
   return (
