@@ -3,15 +3,9 @@ import { Button } from "@workspace/ui/components/button";
 import { api } from "@workspace/backend/_generated/api";
 import { OrganizationSwitcher, SignInButton, UserButton } from "@clerk/nextjs";
 
-import {
-  useMutation,
-  useQuery,
-  Authenticated,
-  Unauthenticated,
-} from "convex/react";
+import { useMutation, Authenticated, Unauthenticated } from "convex/react";
 
 export default function Page() {
-  const users = useQuery(api.users.getMany);
   const addUser = useMutation(api.users.add);
 
   return (
@@ -25,7 +19,6 @@ export default function Page() {
             <Button size="sm" onClick={() => addUser()}>
               Add
             </Button>
-            <div>{JSON.stringify(users, null, 2)}</div>
           </div>
         </div>
       </Authenticated>
