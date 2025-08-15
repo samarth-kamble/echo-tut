@@ -5,25 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5db5ccc5-4851-4e80-8728-842e7423e963" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/echo-tut.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/web/app/(auth)/org-selection/[[...org-selection]]/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/web/app/(dashboard)/layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/web/modules/auth/ui/components/org-selection-view.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/web/modules/auth/ui/components/organization-guard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web/app/(auth)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/app/(auth)/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web/app/(auth)/sign-in/[[...sign-in]]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/app/(auth)/sign-in/[[...sign-in]]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web/app/(auth)/sign-up/[[...sign-up]]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/app/(auth)/sign-up/[[...sign-up]]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/app/(dashboard)/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web/middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/middleware.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/widget/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/widget/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/widget/modules/widget/hooks/use-vapi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/widget/modules/widget/hooks/use-vapi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/widget/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/widget/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/backend/convex/users.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/backend/convex/users.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
     </list>
@@ -33,14 +20,56 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="05-Error-Tracking" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;samarth-kamble&quot;
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "history": [
+    {
+      "assignee": "samarth-kamble"
+    }
+  ],
+  "lastFilter": {
+    "assignee": "samarth-kamble"
   }
-}</component>
+}]]></component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="06-AI-Voice-Assistant" />
+                    <option name="lastUsedInstant" value="1755279308" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1755184101" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="05-Error-Tracking" />
+                    <option name="lastUsedInstant" value="1755183495" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="04-Organization" />
+                    <option name="lastUsedInstant" value="1755170100" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/samarth-kamble/echo-tut.git&quot;,
@@ -61,9 +90,10 @@
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "06-AI-Voice-Assistant",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -72,13 +102,15 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "pnpm",
     "prettierjs.PrettierConfiguration.Package": "/Users/samarthkamble/Developer/Project/echo-tut/node_modules/prettier",
-    "settings.editor.selected.configurable": "editor.preferences.smartKeys",
+    "settings.editor.selected.configurable": "Errors",
     "ts.external.directory.path": "/Users/samarthkamble/Developer/Project/echo-tut/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/VAPI" />
+      <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/apps/web/app/(dashboard)" />
     </key>
   </component>
@@ -99,7 +131,7 @@
       <workItem from="1755163213190" duration="107000" />
       <workItem from="1755163352641" duration="266000" />
       <workItem from="1755163641722" duration="222000" />
-      <workItem from="1755163883344" duration="5877000" />
+      <workItem from="1755163883344" duration="29013000" />
     </task>
     <servers />
   </component>
