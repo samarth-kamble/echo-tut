@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5db5ccc5-4851-4e80-8728-842e7423e963" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/apps/widget/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/widget/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/widget/modules/widget/hooks/use-vapi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/widget/modules/widget/hooks/use-vapi.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/web/modules/dashboard/ui/components/dashboard-sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/web/app/(dashboard)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/app/(dashboard)/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,6 +109,7 @@
       <workItem from="1755163352641" duration="266000" />
       <workItem from="1755163641722" duration="222000" />
       <workItem from="1755163883344" duration="5877000" />
+      <workItem from="1755283032897" duration="1335000" />
     </task>
     <servers />
   </component>
