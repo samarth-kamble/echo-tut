@@ -1,9 +1,12 @@
 "use client";
 
-import { WidgetHeader } from "@/modules/widget/ui/components/widget-header";
-import { Button } from "@workspace/ui/components/button";
+import { useState } from "react";
+import { useMutation } from "convex/react";
 import { useAtomValue, useSetAtom } from "jotai";
 import { ChevronRightIcon, MessageSquareTextIcon } from "lucide-react";
+
+import { WidgetHeader } from "@/modules/widget/ui/components/widget-header";
+import { Button } from "@workspace/ui/components/button";
 import {
   contactSessionIdAtomFamily,
   conversationIdAtom,
@@ -11,9 +14,8 @@ import {
   organizationIdAtom,
   screenAtom,
 } from "../../atoms/widget-atoms";
-import { useMutation } from "convex/react";
 import { api } from "@workspace/backend/_generated/api";
-import { useState } from "react";
+import { WidgetFooter } from "../components/widget-footer";
 
 export const WidgetSelectionScreen = () => {
   const setScreen = useSetAtom(screenAtom);
@@ -79,6 +81,7 @@ export const WidgetSelectionScreen = () => {
           <ChevronRightIcon />
         </Button>
       </div>
+      <WidgetFooter />
     </>
   );
 };
