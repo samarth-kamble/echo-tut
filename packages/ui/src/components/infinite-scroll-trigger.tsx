@@ -1,5 +1,6 @@
 import { Button } from "@workspace/ui/components/button";
 import { cn } from "@workspace/ui/lib/utils";
+import { Loader } from "lucide-react";
 
 interface InfiniteScrollTriggerProps {
   canLoadMore: boolean;
@@ -34,7 +35,7 @@ export const InfiniteScrollTrigger = ({
         disabled={!canLoadMore || isLoadingMore}
         onClick={onLoadMore}
         size={"sm"}
-        variant={"ghost"}
+        variant={"outline"}
       >
         {text}
       </Button>
