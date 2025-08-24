@@ -1,10 +1,10 @@
 import React from 'react'
 
+import { ConversationsView } from '@/modules/dashboard/ui/views/conversations-view'
+
 const Page = () => {
     return (
-        <div>
-            Conversation Page
-        </div>
+        <ConversationsView />
     )
 }
 
