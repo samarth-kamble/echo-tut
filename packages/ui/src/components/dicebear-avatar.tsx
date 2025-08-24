@@ -34,8 +34,7 @@ export const DicebearAvatar = ({
     return avatar.toDataUri();
   }, [seed, size, imageUrl]);
 
-  const badgeSize = Math.round(size * 0.5);
-
+  const badgeSize = Math.round(size * 0.35);
   return (
     <div
       className="relative inline-block"
@@ -56,12 +55,12 @@ export const DicebearAvatar = ({
       {badgeImageUrl && (
         <div
           className={cn(
-            "absolute right-0 left-0 flex items-center justify-center overflow-hidden rounded-full border-2 border-background bg-background"
+            "absolute -bottom-0 -right-0 flex items-center justify-center overflow-hidden rounded-full border-2 border-background bg-background shadow-sm",
+            badgeClassName
           )}
           style={{
             width: badgeSize,
             height: badgeSize,
-            transform: "translate(15%, 15%)",
           }}
         >
           <img

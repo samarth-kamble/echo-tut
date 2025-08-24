@@ -60,7 +60,7 @@ export const WidgetInboxScreen = () => {
         </div>
       </WidgetHeader>
       <div className="flex flex-1 flex-col gap-y-2 overflow-y-auto">
-        {conversations?.results.length > 2 &&
+        {conversations?.results.length > 0 &&
           conversations.results.map((conversation) => (
             <Button
               className="h-20 w-full justify-between"
