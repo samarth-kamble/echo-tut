@@ -4,9 +4,10 @@ import { action, query } from "../_generated/server";
 import { components, internal } from "../_generated/api";
 import { supportAgent } from "../system/ai/agents/supportAgent";
 import { paginationOptsValidator } from "convex/server";
-import { escalateConversation } from "../system/tools/escalatedConversation";
-import { resolveConversation } from "../system/tools/resolveConversation";
+
 import { saveMessage } from "@convex-dev/agent";
+import { escalateConversation } from "../system/ai/tools/escalatedConversation";
+import { resolveConversation } from "../system/ai/tools/resolveConversation";
 
 export const create = action({
   args: {
