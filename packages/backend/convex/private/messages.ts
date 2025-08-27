@@ -97,6 +97,12 @@ export const create = mutation({
       });
     }
 
+    if (conversation.status === "unresolved") {
+      await ctx.db.patch(args.conversationId, {
+        status: "escalated",
+      });
+    }
+
     //  TODO : Implement the subscription check
     await saveMessage(ctx, components.agent, {
       threadId: conversation.threadId,
