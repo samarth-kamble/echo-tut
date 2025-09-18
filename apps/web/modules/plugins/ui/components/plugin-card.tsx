@@ -1,5 +1,5 @@
 import { Button } from "@workspace/ui/components/button";
-import { ArrowLeftRightIcon, LucideIcon, UnplugIcon } from "lucide-react";
+import { ArrowLeftRightIcon, LucideIcon, PlugIcon } from "lucide-react";
 import Image from "next/image";
 
 export interface Feature {
@@ -77,7 +77,7 @@ export const PluginCard = ({
           onClick={onSubmit}
           variant={"default"}
         >
-          Connect <UnplugIcon />
+          Connect <PlugIcon />
         </Button>
       </div>
     </div>

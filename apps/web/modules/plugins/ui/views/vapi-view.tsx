@@ -9,6 +9,8 @@ import {
   PhoneCallIcon,
   PhoneIcon,
   WorkflowIcon,
+  Eye,
+  EyeOff,
 } from "lucide-react";
 import { Feature, PluginCard } from "../components/plugin-card";
 import { api } from "@workspace/backend/_generated/api";
@@ -32,6 +34,7 @@ import {
 import { Input } from "@workspace/ui/components/input";
 import { Label } from "@workspace/ui/components/label";
 import { Button } from "@workspace/ui/components/button";
+import { VapiConnectedView } from "./vapi-connected-view";
 
 const vapiFeatures: Feature[] = [
   {
@@ -77,6 +80,10 @@ const VapiPluginForm = ({
     },
   });
 
+  // visibility state for inputs
+  const [showPublicKey, setShowPublicKey] = useState(false);
+  const [showPrivateKey, setShowPrivateKey] = useState(false);
+
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
       await upsertSecret({
@@ -109,6 +116,7 @@ const VapiPluginForm = ({
             className="flex flex-col gap-y-4"
             onSubmit={form.handleSubmit(onSubmit)}
           >
+            {/* Public API Key */}
             <FormField
               control={form.control}
               name="publicApiKey"
@@ -116,15 +124,30 @@ const VapiPluginForm = ({
                 <FormItem>
                   <Label>Your Public API Key</Label>
                   <FormControl>
-                    <Input
-                      {...field}
-                      placeholder="Your Public API Key"
-                      type="password"
-                    />
+                    <div className="relative">
+                      <Input
+                        {...field}
+                        placeholder="Your Public API Key"
+                        type={showPublicKey ? "text" : "password"}
+                      />
+                      <button
+                        type="button"
+                        className="absolute right-2 top-2 text-gray-500"
+                        onClick={() => setShowPublicKey(!showPublicKey)}
+                      >
+                        {showPublicKey ? (
+                          <EyeOff size={18} />
+                        ) : (
+                          <Eye size={18} />
+                        )}
+                      </button>
+                    </div>
                   </FormControl>
                 </FormItem>
               )}
             />
+
+            {/* Private API Key */}
             <FormField
               control={form.control}
               name="privateApiKey"
@@ -132,15 +155,29 @@ const VapiPluginForm = ({
                 <FormItem>
                   <Label>Your Private API Key</Label>
                   <FormControl>
-                    <Input
-                      {...field}
-                      placeholder="Your Private API Key"
-                      type="password"
-                    />
+                    <div className="relative">
+                      <Input
+                        {...field}
+                        placeholder="Your Private API Key"
+                        type={showPrivateKey ? "text" : "password"}
+                      />
+                      <button
+                        type="button"
+                        className="absolute right-2 top-2 text-gray-500"
+                        onClick={() => setShowPrivateKey(!showPrivateKey)}
+                      >
+                        {showPrivateKey ? (
+                          <EyeOff size={18} />
+                        ) : (
+                          <Eye size={18} />
+                        )}
+                      </button>
+                    </div>
                   </FormControl>
                 </FormItem>
               )}
             />
+
             <DialogFooter>
               <Button type="submit" disabled={form.formState.isSubmitting}>
                 {form.formState.isSubmitting ? "Connecting..." : "Connect"}
@@ -148,6 +185,47 @@ const VapiPluginForm = ({
             </DialogFooter>
           </form>
         </Form>
+      </DialogContent>
+    </Dialog>
+  );
+};
+
+const VapiPluginRemoveForm = ({
+  open,
+  setOpen,
+}: {
+  open: boolean;
+  setOpen: (value: boolean) => void;
+}) => {
+  const removePlugin = useMutation(api.private.plugins.remove);
+
+  const onSubmit = async () => {
+    try {
+      await removePlugin({
+        service: "vapi",
+      });
+      setOpen(false);
+      toast.success("Vapi plugin removes successfully!");
+    } catch (error) {
+      console.error("Failed to removing Vapi:", error);
+      toast.error("Something went wrong");
+    }
+  };
+
+  return (
+    <Dialog onOpenChange={setOpen} open={open}>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>Disconnect Vapi</DialogTitle>
+        </DialogHeader>
+        <DialogDescription>
+          Are you sure you want to disconnect Vapi?
+        </DialogDescription>
+        <DialogFooter>
+          <Button onClick={onSubmit} variant={"destructive"}>
+            Disconnect
+          </Button>
+        </DialogFooter>
       </DialogContent>
     </Dialog>
   );
@@ -161,7 +239,7 @@ export const VapiView = () => {
     service: "vapi",
   });
 
-  const handleSubmit = () => {
+  const toggleConnection = () => {
     if (vapiPlugin) {
       setRemoveOpen(true);
     } else {
@@ -172,6 +250,7 @@ export const VapiView = () => {
   return (
     <>
       <VapiPluginForm open={connectOpen} setOpen={setConnectOpen} />
+      <VapiPluginRemoveForm open={removeOpen} setOpen={setRemoveOpen} />
       <div className="flex min-h-screen flex-col bg-muted p-8">
         <div className="mx-auto w-full max-w-screen-md">
           <div className="space-y-2">
@@ -182,14 +261,14 @@ export const VapiView = () => {
           </div>
           <div className="mt-8">
             {vapiPlugin ? (
-              <div>Connected</div>
+              <VapiConnectedView onDisconnect={toggleConnection} />
             ) : (
               <PluginCard
                 serviceImage="/vapi.jpg"
                 serviceName="Vapi"
                 features={vapiFeatures}
                 isDisabled={vapiPlugin === undefined}
-                onSubmit={handleSubmit}
+                onSubmit={toggleConnection}
               />
             )}
           </div>
