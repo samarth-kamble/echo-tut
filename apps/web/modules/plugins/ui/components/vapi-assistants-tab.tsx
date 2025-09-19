@@ -1,4 +1,5 @@
-"ude client";
+"use client";
+
 import React from "react";
 import { BotIcon } from "lucide-react";
 
@@ -57,7 +58,7 @@ export const VapiAssistantsTab = () => {
                 <TableCell className="px-6 py-4">
                   <div className="flex items-center gap-3">
                     <BotIcon className="size-4 text-muted-foreground" />
-                    <span>{assistant.name || "Unamed"}</span>
+                    <span>{assistant.name || "Unnamed"}</span>
                   </div>
                 </TableCell>
                 <TableCell className="px-6 py-4">

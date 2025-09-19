@@ -1,4 +1,5 @@
-"ude client";
+"use client";
+
 import React from "react";
 import { CheckCircleIcon, PhoneIcon, XCircleIcon } from "lucide-react";
 import { Badge } from "@workspace/ui/components/badge";
@@ -64,7 +65,7 @@ export const VapiPhoneNumbersTab = () => {
                   </div>
                 </TableCell>
                 <TableCell className="px-6 py-4">
-                  {phone.name || "Unamed"}
+                  {phone.name || "Unnamed"}
                 </TableCell>
                 <TableCell className="px-6 py-4">
                   <Badge

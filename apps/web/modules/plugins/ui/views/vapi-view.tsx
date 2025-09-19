@@ -205,7 +205,7 @@ const VapiPluginRemoveForm = ({
         service: "vapi",
       });
       setOpen(false);
-      toast.success("Vapi plugin removes successfully!");
+      toast.success("Vapi plugin removed successfully!");
     } catch (error) {
       console.error("Failed to removing Vapi:", error);
       toast.error("Something went wrong");
