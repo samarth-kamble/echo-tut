@@ -11,6 +11,7 @@ import { WidgetSelectionScreen } from "../screens/widget-selection-screen";
 import { WidgetChatScreen } from "../screens/widget-chat-screen";
 import { WidgetInboxScreen } from "../screens/widget-inbox-screen";
 import { WidgetVoiceScreen } from "../screens/widget-voice-screen";
+import { WidgetContactScreen } from "../screens/widget-contact-screen";
 
 interface Props {
   organizationId: string;
@@ -27,12 +28,11 @@ const WidgetView = ({ organizationId }: Props) => {
     inbox: <WidgetInboxScreen />,
     selection: <WidgetSelectionScreen />,
     chat: <WidgetChatScreen />,
-    contact: <p>TODO: Contact</p>,
+    contact: <WidgetContactScreen />,
   };
 
   return (
-    //  TODO: Confirm whether or not min-h-screen and min-w-screen is needed
-    <main className="min-h-screen min-w-screen flex h-full w-full flex-col overflow-hidden rounded-xl border bg-muted">
+    <main className="flex h-full w-full flex-col overflow-hidden rounded-xl border bg-muted">
       {screenComponents[screen]}
     </main>
   );
