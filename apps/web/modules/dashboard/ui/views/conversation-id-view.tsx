@@ -155,7 +155,7 @@ export const ConversationIdView = ({
         )}
       </header>
 
-      <AIConversation className="max-h-[cal(100vh-180px)]">
+      <AIConversation className="max-h-[calc(100vh-180px)]">
         <AIConversationContent>
           <InfiniteScrollTrigger
             canLoadMore={canLoadMore}

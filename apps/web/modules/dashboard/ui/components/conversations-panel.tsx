@@ -44,7 +44,7 @@ export const ConversationsPanel = () => {
     },
     {
       initialNumItems: 10,
-    },
+    }
   );
 
   const {
@@ -103,14 +103,14 @@ export const ConversationsPanel = () => {
       {isLoadingFirstPage ? (
         <SkeletonConversations />
       ) : (
-        <ScrollArea className="max-h-[calc(100vh53px)]">
+        <ScrollArea className="max-h-[calc(100vh-53px)]">
           <div className="flex w-full flex-1 flex-col text-sm">
             {conversations.results.map((conversation) => {
               const isLastMessageFromOperator =
                 conversation.lastMessage?.message?.role !== "user";
 
               const country = getCountryFromTimezone(
-                conversation.contactSession.metadata?.timezone,
+                conversation.contactSession.metadata?.timezone
               );
 
               const countryFlagUrl = country?.code
@@ -124,14 +124,14 @@ export const ConversationsPanel = () => {
                   className={cn(
                     "relative flex cursor-pointer items-start gap-3 border-b p-4 py-5 text-sm leading-tight hover:bg-accent hover:text-accent-foreground",
                     pathname === `/conversations/${conversation._id}` &&
-                      "bg-accent text-accent-foreground",
+                      "bg-accent text-accent-foreground"
                   )}
                 >
                   <div
                     className={cn(
                       "-translate-y-1/2 absolute top-1/2 left-0 h-[64%] w-1 rounded-r-full bg-neutral-300 opacity-0 transition-opacity",
                       pathname === `/conversations/${conversation._id}` &&
-                        "opacity-100",
+                        "opacity-100"
                     )}
                   />
 
@@ -159,8 +159,7 @@ export const ConversationsPanel = () => {
                         <span
                           className={cn(
                             "line-clamp-1 text-muted-foreground text-xs",
-                            !isLastMessageFromOperator &&
-                              "font-bold text-black",
+                            !isLastMessageFromOperator && "font-bold text-black"
                           )}
                         >
                           {conversation.lastMessage?.text}
