@@ -77,8 +77,8 @@ export const IntegrationsView = () => {
             <div className="space-y-1">
               <Label>Integrations</Label>
               <p className="text-muted-foreground">
-                Add the following code snippet to your application to enable to
-                chatbox.
+                Add the following code snippet to your application to enable the
+                chatbot.
               </p>
             </div>
 

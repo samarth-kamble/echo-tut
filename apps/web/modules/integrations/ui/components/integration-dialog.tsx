@@ -24,7 +24,7 @@ export const IntegrationsDialog = ({
         <DialogHeader>
           <DialogTitle>Integrate with your website.</DialogTitle>
           <DialogDescription>
-            Follow these step to add the chatbot to you website.
+            Follow these steps to add the chatbot to your website.
           </DialogDescription>
         </DialogHeader>
         <div className="space-y-6">
@@ -55,7 +55,7 @@ export const IntegrationsDialog = ({
               2. Add the code in your page.
             </div>
             <p className="text-muted-foreground text-sm">
-              Paste the chatbox code above in your page. You can add it in the
+              Paste the chatbot code above to your page. You can add it in the
               HTML head section.
             </p>
           </div>
