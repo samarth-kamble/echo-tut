@@ -2,7 +2,7 @@ import { ConvexError, v } from "convex/values";
 import { generateText } from "ai";
 
 import { action, mutation, query } from "../_generated/server";
-import { components } from "../_generated/api";
+import { components, internal } from "../_generated/api";
 import { supportAgent } from "../system/ai/agents/supportAgent";
 import { paginationOptsValidator } from "convex/server";
 import { saveMessage } from "@convex-dev/agent";
@@ -29,6 +29,21 @@ export const enhanceResponse = action({
       throw new ConvexError({
         code: "UNAUTHORIZED",
         message: "Organization not found",
+      });
+    }
+
+    const subscription = await ctx.runQuery(
+      internal.system.subscriptions.getByOrganizationId,
+      {
+        organizationId: orgId,
+      }
+    );
+
+    if (subscription?.status !== "active") {
+      throw new ConvexError({
+        code: "BAD_REQUEST",
+        message:
+          "Your organization does not have an active subscription to use this feature.",
       });
     }
 
