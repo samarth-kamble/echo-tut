@@ -1,12 +1,8 @@
-
-import React from 'react'
+import { IntegrationsView } from "@/modules/integrations/ui/views/integrations-view";
+import React from "react";
 
 const Page = () => {
-    return (
-        <div>
-            <h1>Integrations Page</h1>
-        </div>
-    )
-}
+  return <IntegrationsView />;
+};
 
-export default Page
+export default Page;
