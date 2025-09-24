@@ -40,7 +40,7 @@ http.route({
           maxAllowedMemberships: newMaxAllowedMemberships,
         });
 
-        await ctx.runMutation(internal.system.subscription.upsert, {
+        await ctx.runMutation(internal.system.subscriptions.upsert, {
           organizationId,
           status: subscription.status,
         });
