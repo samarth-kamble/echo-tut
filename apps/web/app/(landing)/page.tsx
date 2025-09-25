@@ -31,12 +31,13 @@ import {
 import Image from "next/image";
 import { UserButton, useUser } from "@clerk/nextjs";
 import { Button } from "@workspace/ui/components/button";
+import { useRouter } from "next/navigation";
 
 const Page = () => {
+  const { user } = useUser();
+  const router = useRouter();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [faqOpen, setFaqOpen] = useState<number | null>(0);
-
-  const { user } = useUser();
 
   return (
     <main className="min-h-dvh bg-white text-gray-900">
@@ -96,7 +97,12 @@ const Page = () => {
 
           {user ? (
             <div className="flex items-center gap-4">
-              <Button variant={"outline"}>Dashboard</Button>
+              <Button
+                variant={"outline"}
+                onClick={() => router.push("/conversations")}
+              >
+                Dashboard
+              </Button>
               <UserButton afterSignOutUrl="/" />
             </div>
           ) : (
@@ -169,7 +175,12 @@ const Page = () => {
             </nav>
             {user ? (
               <div className="flex items-center gap-4">
-                <Button variant={"outline"}>Dashboard</Button>
+                <Button
+                  variant={"outline"}
+                  onClick={() => router.push("/conversations")}
+                >
+                  Dashboard
+                </Button>
                 <UserButton afterSignOutUrl="/" />
               </div>
             ) : (
