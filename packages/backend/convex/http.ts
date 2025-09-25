@@ -66,7 +66,7 @@ async function validateRequest(request: Request): Promise<WebhookEvent | null> {
     "svix-signature": request.headers.get("svix-signature") || "",
   };
 
-  const wh = new Webhook(process.env.CLERK_WEBHOOK_SECRET || "");
+  const wh = new Webhook(process.env.CLERK_WEBHOOK_KEY || "");
 
   try {
     return wh.verify(payload, svixHeaders) as unknown as WebhookEvent;
