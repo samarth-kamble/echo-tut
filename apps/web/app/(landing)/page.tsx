@@ -54,7 +54,7 @@ const Page = () => {
       {/* Header */}
       <header className="sticky top-0 z-50 border-b border-gray-200 bg-white md:bg-white/70 md:backdrop-blur-md transition-colors duration-200">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-          <a href="#" className="inline-flex items-center gap-2">
+          <a href="/" className="inline-flex items-center gap-2">
             <Image src={"/logo.svg"} alt="Logo" height={24} width={24} />
             <span className="text-lg font-semibold">Echo</span>
           </a>
