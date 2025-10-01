@@ -32,6 +32,7 @@ import Image from "next/image";
 import { UserButton, useUser } from "@clerk/nextjs";
 import { Button } from "@workspace/ui/components/button";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Page = () => {
   const { user } = useUser();
@@ -54,44 +55,44 @@ const Page = () => {
       {/* Header */}
       <header className="sticky top-0 z-50 border-b border-gray-200 bg-white md:bg-white/70 md:backdrop-blur-md transition-colors duration-200">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-          <a href="/" className="inline-flex items-center gap-2">
+          <Link href="/" className="inline-flex items-center gap-2">
             <Image src={"/logo.svg"} alt="Logo" height={24} width={24} />
             <span className="text-lg font-semibold">Echo</span>
-          </a>
+          </Link>
 
           {/* Desktop nav */}
           <nav className="hidden items-center gap-6 md:flex">
             <div className="flex items-center rounded-full border border-gray-200 bg-white/80 px-2 py-1 shadow-sm">
-              <a
+              <Link
                 href="#features"
                 className="px-3 py-1.5 text-sm hover:text-gray-700 transition-colors"
               >
                 Features
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#integrations"
                 className="px-3 py-1.5 text-sm hover:text-gray-700 transition-colors"
               >
                 Integrations
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#use-cases"
                 className="px-3 py-1.5 text-sm hover:text-gray-700 transition-colors"
               >
                 Use cases
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#pricing"
                 className="px-3 py-1.5 text-sm hover:text-gray-700 transition-colors"
               >
                 Pricing
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#faq"
                 className="px-3 py-1.5 text-sm hover:text-gray-700 transition-colors"
               >
                 FAQ
-              </a>
+              </Link>
             </div>
           </nav>
 
@@ -107,18 +108,18 @@ const Page = () => {
             </div>
           ) : (
             <div className="flex items-center gap-2">
-              <a
+              <Link
                 href="/sign-in"
                 className="hidden rounded-md px-3 py-2 text-sm hover:bg-gray-100 transition-colors sm:inline-block"
               >
                 Sign in
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/sign-up"
                 className="inline-flex items-center gap-2 rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-500 transition-colors"
               >
                 Sign Up
-              </a>
+              </Link>
               <button
                 className="rounded-md p-2 hover:bg-gray-100 md:hidden transition-colors"
                 aria-label="Open menu"
@@ -163,14 +164,14 @@ const Page = () => {
                 ["Pricing", "#pricing"],
                 ["FAQ", "#faq"],
               ].map(([label, href]) => (
-                <a
+                <Link
                   key={label}
-                  href={href}
+                  href={href || ""}
                   className="rounded-md px-3 py-2 hover:bg-gray-100 transition-colors"
                   onClick={() => setMobileOpen(false)}
                 >
                   {label}
-                </a>
+                </Link>
               ))}
             </nav>
             {user ? (
@@ -185,18 +186,18 @@ const Page = () => {
               </div>
             ) : (
               <div className="mt-6 grid gap-3">
-                <a
+                <Link
                   href="/sign-in"
                   className="hidden rounded-md px-3 py-2 text-sm hover:bg-gray-100 transition-colors sm:inline-block"
                 >
                   Sign in
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/sign-up"
                   className="inline-flex items-center gap-2 rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-500 transition-colors"
                 >
                   Sign Up
-                </a>
+                </Link>
                 <button
                   className="rounded-md p-2 hover:bg-gray-100 md:hidden transition-colors"
                   aria-label="Open menu"
@@ -228,19 +229,19 @@ const Page = () => {
                 Vapi, and seamless human escalation when needed.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-3">
-                <a
+                <Link
                   href="#cta"
                   className="inline-flex items-center gap-2 rounded-md bg-indigo-600 px-5 py-3 font-semibold text-white hover:bg-indigo-500 transition-colors"
                 >
                   Start free trial
                   <ArrowRight className="h-4 w-4" />
-                </a>
-                <a
+                </Link>
+                <Link
                   href="#features"
                   className="rounded-md px-5 py-3 font-semibold text-indigo-700 ring-1 ring-inset ring-indigo-200 hover:bg-indigo-50 transition-colors"
                 >
                   See features
-                </a>
+                </Link>
               </div>
 
               <div className="mt-6 flex items-center gap-6 text-sm text-gray-600">
@@ -643,7 +644,7 @@ const Page = () => {
                     </li>
                   ))}
                 </ul>
-                <a
+                <Link
                   href="#cta"
                   className={`mt-6 inline-block w-full rounded-md px-4 py-2 text-center font-semibold ${
                     plan.highlight
@@ -652,7 +653,7 @@ const Page = () => {
                   } transition-colors`}
                 >
                   {plan.name === "Enterprise" ? "Contact sales" : "Choose plan"}
-                </a>
+                </Link>
               </div>
             ))}
           </div>
@@ -755,19 +756,19 @@ const Page = () => {
               <div className="text-sm font-semibold">Product</div>
               <ul className="mt-3 space-y-2 text-sm text-gray-600">
                 <li>
-                  <a href="#features" className="hover:underline">
+                  <Link href="#features" className="hover:underline">
                     Features
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#use-cases" className="hover:underline">
+                  <Link href="#use-cases" className="hover:underline">
                     Use cases
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#pricing" className="hover:underline">
+                  <Link href="#pricing" className="hover:underline">
                     Pricing
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -775,19 +776,19 @@ const Page = () => {
               <div className="text-sm font-semibold">Company</div>
               <ul className="mt-3 space-y-2 text-sm text-gray-600">
                 <li>
-                  <a href="#" className="hover:underline">
+                  <Link href="#" className="hover:underline">
                     About
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:underline">
+                  <Link href="#" className="hover:underline">
                     Careers
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:underline">
+                  <Link href="#" className="hover:underline">
                     Contact
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -795,19 +796,19 @@ const Page = () => {
               <div className="text-sm font-semibold">Legal</div>
               <ul className="mt-3 space-y-2 text-sm text-gray-600">
                 <li>
-                  <a href="#" className="hover:underline">
+                  <Link href="#" className="hover:underline">
                     Privacy
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:underline">
+                  <Link href="#" className="hover:underline">
                     Terms
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:underline">
+                  <Link href="#" className="hover:underline">
                     Status
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -815,15 +816,15 @@ const Page = () => {
           <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-gray-200 pt-6 text-sm text-gray-600 sm:flex-row">
             <span>© {new Date().getFullYear()} Echo </span>
             <div className="flex items-center gap-4">
-              <a href="#" className="hover:underline">
+              <Link href="#" className="hover:underline">
                 Security
-              </a>
-              <a href="#" className="hover:underline">
+              </Link>
+              <Link href="#" className="hover:underline">
                 Compliance
-              </a>
-              <a href="#" className="hover:underline">
+              </Link>
+              <Link href="#" className="hover:underline">
                 DPA
-              </a>
+              </Link>
             </div>
           </div>
         </div>
