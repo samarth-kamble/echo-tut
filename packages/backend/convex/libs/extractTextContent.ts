@@ -1,13 +1,13 @@
-import { google } from "@ai-sdk/google";
+import { openai } from "@ai-sdk/openai";
 import { generateText } from "ai";
 import type { StorageActionWriter } from "convex/server";
 import { assert } from "convex-helpers";
 import { Id } from "../_generated/dataModel";
 
 const AI_MODELS = {
-  image: google.chat("gemini-2.5-flash"),
-  pdf: google.chat("gemini-2.5-flash"),
-  html: google.chat("gemini-2.5-flash"),
+  image: openai.chat("gpt-5-mini"),
+  pdf: openai.chat("gpt-5-mini"),
+  html: openai.chat("gpt-5-mini"),
 } as const;
 
 const SUPPORTED_IMAGE_TYPES = [
