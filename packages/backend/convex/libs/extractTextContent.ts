@@ -5,9 +5,9 @@ import { assert } from "convex-helpers";
 import { Id } from "../_generated/dataModel";
 
 const AI_MODELS = {
-  image: openai.chat("gpt-5-mini"),
-  pdf: openai.chat("gpt-5-mini"),
-  html: openai.chat("gpt-5-mini"),
+  image: openai.chat("gpt-4o-mini"),
+  pdf: openai.chat("gpt-4o-mini"),
+  html: openai.chat("gpt-4o-mini"),
 } as const;
 
 const SUPPORTED_IMAGE_TYPES = [
