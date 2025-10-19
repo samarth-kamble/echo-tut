@@ -34,9 +34,11 @@ import type * as system_ai_tools_resolveConversation from "../system/ai/tools/re
 import type * as system_ai_tools_search from "../system/ai/tools/search.js";
 import type * as system_contactSessions from "../system/contactSessions.js";
 import type * as system_conversations from "../system/conversations.js";
+import type * as system_organizations from "../system/organizations.js";
 import type * as system_plugins from "../system/plugins.js";
 import type * as system_secrets from "../system/secrets.js";
 import type * as system_subscriptions from "../system/subscriptions.js";
+import type * as system_users from "../system/users.js";
 import type * as users from "../users.js";
 
 import type {
@@ -80,9 +82,11 @@ declare const fullApi: ApiFromModules<{
   "system/ai/tools/search": typeof system_ai_tools_search;
   "system/contactSessions": typeof system_contactSessions;
   "system/conversations": typeof system_conversations;
+  "system/organizations": typeof system_organizations;
   "system/plugins": typeof system_plugins;
   "system/secrets": typeof system_secrets;
   "system/subscriptions": typeof system_subscriptions;
+  "system/users": typeof system_users;
   users: typeof users;
 }>;
 declare const fullApiWithMounts: typeof fullApi;

@@ -20,6 +20,84 @@ http.route({
     }
 
     switch (event.type) {
+      case "user.created":
+        await ctx.runMutation(internal.system.users.createUser, {
+          clerkId: event.data.id,
+          email: event.data.email_addresses[0].email_address,
+          imageUrl: event.data.image_url,
+          name: event.data.first_name || "Unknown",
+        });
+        await clerkClient.users.updateUser(event.data.id, {
+          publicMetadata: { role: "user" },
+        });
+        break;
+
+      case "user.updated":
+        await ctx.runMutation(internal.system.users.updateUser, {
+          clerkId: event.data.id,
+          imageUrl: event.data.image_url,
+          email: event.data.email_addresses[0].email_address,
+        });
+        break;
+
+      case "user.deleted":
+        if (!event.data.id) {
+          return new Response("Missing user ID", { status: 400 });
+        }
+        await ctx.runMutation(internal.system.users.deleteUser, {
+          clerkId: event.data.id,
+        });
+        break;
+
+      /** ORGANIZATION EVENTS **/
+      case "organization.created":
+        await ctx.runMutation(
+          internal.system.organizations.createOrganization,
+          {
+            clerkOrgId: event.data.id,
+            name: event.data.name,
+            createdBy: event.data.created_by || "unknown",
+          }
+        );
+        break;
+
+      case "organization.updated":
+        await ctx.runMutation(
+          internal.system.organizations.updateOrganization,
+          {
+            clerkOrgId: event.data.id,
+            name: event.data.name,
+          }
+        );
+        break;
+
+      case "organization.deleted":
+        if (!event.data.id) {
+          return new Response("Missing organization ID", { status: 400 });
+        }
+        await ctx.runMutation(
+          internal.system.organizations.deleteOrganization,
+          {
+            clerkOrgId: event.data.id,
+          }
+        );
+        break;
+
+      /** ORGANIZATION MEMBERSHIP EVENTS **/
+      case "organizationMembership.created":
+        await ctx.runMutation(internal.system.organizations.addMember, {
+          clerkOrgId: event.data.organization.id,
+          userId: event.data.public_user_data.user_id,
+        });
+        break;
+
+      case "organizationMembership.deleted":
+        await ctx.runMutation(internal.system.organizations.removeMember, {
+          clerkOrgId: event.data.organization.id,
+          userId: event.data.public_user_data.user_id,
+        });
+        break;
+
       case "subscription.updated": {
         const subscription = event.data as {
           status: string;
