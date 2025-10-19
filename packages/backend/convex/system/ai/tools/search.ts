@@ -1,4 +1,4 @@
-import { google } from "@ai-sdk/google";
+import { openai } from "@ai-sdk/openai";
 import { createTool } from "@convex-dev/agent";
 import { generateText } from "ai";
 import z from "zod";
@@ -52,7 +52,7 @@ export const search = createTool({
           content: `User asked: "${args.query}"\n\nSearch Result: ${contextText}`,
         },
       ],
-      model: google.chat("gemini-2.5-flash"),
+      model: openai.chat("gpt-5-mini"),
     });
 
     await supportAgent.saveMessage(ctx, {
