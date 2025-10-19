@@ -1,11 +1,11 @@
 import React from "react";
 import { Work_Sans } from "next/font/google";
-import { ClerkProvider } from "@clerk/nextjs";
 
 import "@workspace/ui/globals.css";
 import { Providers } from "@/components/providers";
 import { Toaster } from "@workspace/ui/components/sonner";
 import { Metadata } from "next";
+import ConvexClerkProvider from "@/components/convex-clerk-provider";
 
 const fontSans = Work_Sans({
   subsets: ["latin"],
@@ -29,18 +29,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${fontSans.className}  font-sans antialiased `}>
-        <ClerkProvider
-          appearance={{
-            variables: {
-              colorPrimary: "#3C82F6",
-            },
-          }}
-        >
+        <ConvexClerkProvider>
           <Providers>
             <Toaster position="top-right" richColors />
             {children}
           </Providers>
-        </ClerkProvider>
+        </ConvexClerkProvider>
       </body>
     </html>
   );
