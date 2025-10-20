@@ -1,7 +1,7 @@
 <div align="center">
   <br />
     <a href="https://www.github.com/samarth-kamble/echo-tut" target="_blank">
-      <img src="assets/readme/hero.png" alt="Project Banner">
+      <img src="https://github.com/samarth-kamble/echo-tut/blob/main/public/assets/readme/hero.png" alt="Project Banner">
     </a>
   <br />
 
