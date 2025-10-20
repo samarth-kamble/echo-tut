@@ -27,9 +27,6 @@ http.route({
           imageUrl: event.data.image_url,
           name: event.data.first_name || "Unknown",
         });
-        await clerkClient.users.updateUser(event.data.id, {
-          publicMetadata: { role: "user" },
-        });
         break;
 
       case "user.updated":
