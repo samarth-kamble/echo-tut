@@ -18,6 +18,7 @@ import type * as private_files from "../private/files.js";
 import type * as private_messages from "../private/messages.js";
 import type * as private_plugins from "../private/plugins.js";
 import type * as private_secrets from "../private/secrets.js";
+import type * as private_users from "../private/users.js";
 import type * as private_vapi from "../private/vapi.js";
 import type * as private_widgetSettings from "../private/widgetSettings.js";
 import type * as public_contactSessions from "../public/contactSessions.js";
@@ -34,9 +35,11 @@ import type * as system_ai_tools_resolveConversation from "../system/ai/tools/re
 import type * as system_ai_tools_search from "../system/ai/tools/search.js";
 import type * as system_contactSessions from "../system/contactSessions.js";
 import type * as system_conversations from "../system/conversations.js";
+import type * as system_organizations from "../system/organizations.js";
 import type * as system_plugins from "../system/plugins.js";
 import type * as system_secrets from "../system/secrets.js";
 import type * as system_subscriptions from "../system/subscriptions.js";
+import type * as system_users from "../system/users.js";
 import type * as users from "../users.js";
 
 import type {
@@ -64,6 +67,7 @@ declare const fullApi: ApiFromModules<{
   "private/messages": typeof private_messages;
   "private/plugins": typeof private_plugins;
   "private/secrets": typeof private_secrets;
+  "private/users": typeof private_users;
   "private/vapi": typeof private_vapi;
   "private/widgetSettings": typeof private_widgetSettings;
   "public/contactSessions": typeof public_contactSessions;
@@ -80,9 +84,11 @@ declare const fullApi: ApiFromModules<{
   "system/ai/tools/search": typeof system_ai_tools_search;
   "system/contactSessions": typeof system_contactSessions;
   "system/conversations": typeof system_conversations;
+  "system/organizations": typeof system_organizations;
   "system/plugins": typeof system_plugins;
   "system/secrets": typeof system_secrets;
   "system/subscriptions": typeof system_subscriptions;
+  "system/users": typeof system_users;
   users: typeof users;
 }>;
 declare const fullApiWithMounts: typeof fullApi;

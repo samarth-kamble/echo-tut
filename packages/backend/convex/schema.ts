@@ -2,6 +2,18 @@ import { defineSchema, defineTable } from "convex/server";
 import { v } from "convex/values";
 
 export default defineSchema({
+  users: defineTable({
+    clerkId: v.string(),
+    email: v.string(),
+    imageUrl: v.string(),
+    name: v.string(),
+    orgIds: v.optional(v.array(v.string())), // if user belongs to multiple orgs
+  }).index("by_clerk_id", ["clerkId"]),
+  organizations: defineTable({
+    clerkOrgId: v.string(),
+    name: v.string(),
+    createdBy: v.string(), // clerkId of user who created org
+  }).index("by_clerk_org_id", ["clerkOrgId"]),
   subscriptions: defineTable({
     organizationId: v.string(),
     status: v.string(),
@@ -64,7 +76,4 @@ export default defineSchema({
   })
     .index("by_organization_id", ["organizationId"])
     .index("by_expires_at", ["expiredAt"]),
-  users: defineTable({
-    name: v.string(),
-  }),
 });
