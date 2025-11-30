@@ -93,7 +93,7 @@ export const PremiumFeatureOverlay = ({
           <CardContent className="space-y-6">
             <div className="space-y-6">
               {features.map((feature) => (
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3" key={feature.label}>
                   <div className="flex size-8 items-center justify-center rounded-lg border bg-muted">
                     <feature.icon className="size-4 text-muted-foreground" />
                   </div>

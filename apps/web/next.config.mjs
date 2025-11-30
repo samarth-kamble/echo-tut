@@ -1,13 +1,20 @@
-import {withSentryConfig} from "@sentry/nextjs";
+import { withSentryConfig } from "@sentry/nextjs";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   transpilePackages: ["@workspace/ui"],
-}
+  devIndicators: false,
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/conversations",
+        permanent: false,
+      },
+    ];
+  },
+};
 
 export default withSentryConfig(nextConfig, {
-  // For all available options, see:
-  // https://www.npmjs.com/package/@sentry/webpack-plugin#options
-
   org: "jsm-h7",
 
   project: "echo-tut",
