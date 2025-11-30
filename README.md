@@ -1,43 +1,37 @@
 <div align="center">
 <br />
-<a href="https://youtu.be/CAr02YlEJUc?si=LRfCr6zGZ2sfaszr" target="_blank">
-<img src="./public/Banner.png" alt="Project Banner">
+<a href="https://github.com/samarth-kamble/echo-tut" target="_blank">
+    <img src="./public/Banner.png" alt="Project Banner">
 </a>
 <br />
 <br />
 
 <div>
     <img src="https://img.shields.io/badge/Next.js-000000?logo=nextdotjs&logoColor=white&style=for-the-badge" height="40" alt="nextjs logo"  />
-  <img src="https://img.shields.io/badge/Tailwind CSS-06B6D4?logo=tailwindcss&logoColor=black&style=for-the-badge" height="40" alt="tailwindcss logo"  />
-  <img src="https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white&style=for-the-badge" height="40" alt="github logo"  />
-  <img src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white&style=for-the-badge" height="40" alt="typescript logo"  />
-  <img src="https://img.shields.io/badge/Vercel-000000?logo=vercel&logoColor=white&style=for-the-badge" height="40" alt="vercel logo"  />
-  <img src="https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white&style=for-the-badge" height="40" alt="vite logo"  />
-  <img src="https://img.shields.io/badge/Sentry-362D59?logo=sentry&logoColor=white&style=for-the-badge" height="40" alt="sentry logo"  />
-  <img src="https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black&style=for-the-badge" height="40" alt="react logo"  />
-
+    <img src="https://img.shields.io/badge/Tailwind CSS-06B6D4?logo=tailwindcss&logoColor=black&style=for-the-badge" height="40" alt="tailwindcss logo"  />
+    <img src="https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white&style=for-the-badge" height="40" alt="github logo"  />
+    <img src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white&style=for-the-badge" height="40" alt="typescript logo"  />
+    <img src="https://img.shields.io/badge/Vercel-000000?logo=vercel&logoColor=white&style=for-the-badge" height="40" alt="vercel logo"  />
+    <img src="https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white&style=for-the-badge" height="40" alt="vite logo"  />
+    <img src="https://img.shields.io/badge/Sentry-362D59?logo=sentry&logoColor=white&style=for-the-badge" height="40" alt="sentry logo"  />
+    <img src="https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black&style=for-the-badge" height="40" alt="react logo"  />
 </div>
 
 <h3 align="center">Echo - B2B AI Support Platform</h3>
 </div>
 
 📋 <a name="table">Table of Contents</a>
-
 🤖 Introduction
-
 ⚙️ Tech Stack
-
 🔋 Features
-
 🤸 Quick Start
-
-<a name="introduction">🤖 Introduction</a>
+<a name="#introduction">🤖 Introduction</a>
 
 Echo is a production-grade B2B SaaS AI support platform designed to revolutionize customer service. It enables businesses to deploy intelligent AI agents that can handle support queries via both chat and voice.
 
 Powered by RAG (Retrieval Augmented Generation), Echo learns from your documentation to provide accurate answers. It features a multi-tenant architecture where organizations can bring their own API keys, secure credential storage with AWS Secrets Manager, and a real-time operator dashboard to monitor, intercept, and resolve conversations seamlessly.
 
-<a name="tech-stack">⚙️ Tech Stack</a>
+<a name="#tech-stack">⚙️ Tech Stack</a>
 
 - Next.js 15
 - TypeScript
@@ -49,7 +43,7 @@ Powered by RAG (Retrieval Augmented Generation), Echo learns from your documenta
 - Tailwind CSS
 - Turborepo
 
-<a name="features">🔋 Features</a>
+<a name="#features">🔋 Features</a>
 
 👉 Multi-Tenant B2B Architecture: Complete organization isolation allowing businesses to manage their own workspaces, team members, and settings independently via Clerk.
 
@@ -100,7 +94,7 @@ pnpm install
 Create a new file named `.env.local` in the root of your project and add the following content:
 
 ```env
-packages/backend
+
 CONVEX_DEPLOYMENT=
 CONVEX_URL=
 CLERK_JWT_ISSUER_DOMAIN=
@@ -118,7 +112,7 @@ Replace the placeholder values with your actual Convex & Clerk credentials. You 
 **Running the Project**
 
 ```bash
-turbo dev
+pnpm turbo dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
