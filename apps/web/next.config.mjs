@@ -8,7 +8,7 @@ const nextConfig = {
       {
         source: "/",
         destination: "/conversations",
-        permanent: true,
+        permanent: false,
       },
     ];
   },
