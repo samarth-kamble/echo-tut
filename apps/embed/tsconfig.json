@@ -8,5 +8,5 @@
     "noEmit": true,
     "skipLibCheck": true
   },
-  "include": ["embed.ts", "vite.config.ts", "vit-env.d.ts", "*.ts", "**/*.ts"]
+  "include": ["embed.ts", "vite.config.ts", "vite-env.d.ts", "*.ts", "**/*.ts"]
 }
