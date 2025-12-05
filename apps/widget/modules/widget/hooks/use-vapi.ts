@@ -67,7 +67,7 @@ export const useVapi = () => {
     return () => {
       vapiInstance?.stop();
     };
-  }, []);
+  }, [vapiSecrets]);
 
   const startCall = () => {
     if (!vapiSecrets || !widgetSettings?.vapiSettings?.assistantId) {
@@ -77,7 +77,7 @@ export const useVapi = () => {
     setIsConnecting(true);
 
     if (vapi) {
-      vapi.start(widgetSettings?.vapiSettings.assistantId);
+      vapi.start(widgetSettings.vapiSettings.assistantId);
     }
   };
 
